@@ -103,3 +103,11 @@ class User(AbstractUser, PermissionsMixin):
         "Is the user a member of staff?"
         # Simplest possible answer: All admins are staff
         return self.is_admin
+
+
+
+##################################################### Class Employee #########################################
+
+class Employee(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE),
+    is_active = models.BooleanField(default=True)
