@@ -43,4 +43,5 @@ urlpatterns = [
 
     #app urls
     path("auth/", include("account.urls")),
+    path("entreprise/", include("entreprise.urls"))
 ]

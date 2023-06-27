@@ -62,7 +62,7 @@ class MyUserManger(BaseUserManager):
 class User(AbstractUser, PermissionsMixin):
     email = models.EmailField(verbose_name='email adress',
                               max_length=255,
-                              unique = True
+                              unique=True
                               )
     lastname = models.CharField(max_length=255)
     firstname = models.CharField(max_length=255)
@@ -106,8 +106,3 @@ class User(AbstractUser, PermissionsMixin):
 
 
 
-##################################################### Class Employee #########################################
-
-class Employee(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE),
-    is_active = models.BooleanField(default=True)
